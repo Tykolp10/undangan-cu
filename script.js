@@ -635,13 +635,6 @@ function setupGateOpening() {
   });
 
   if (audioControl && bgMusic) {
-    // Crop audio playback to exactly 30 seconds and loop seamlessly
-    bgMusic.addEventListener('timeupdate', () => {
-      if (bgMusic.currentTime >= 30) {
-        bgMusic.currentTime = 0;
-      }
-    });
-
     audioControl.addEventListener('click', () => {
       if (bgMusic.paused) {
         bgMusic.play()
