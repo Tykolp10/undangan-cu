@@ -12,12 +12,14 @@ We have completed the premium visual revisions and QA corrections on the digital
 - Styled usernames using `var(--color-ink)` / bronze highlights and completely eliminated the default blue hyperlinked underline.
 - Expanded the interactive touch area to comfortable A11y standards ($\ge 44$px).
 
-### 2. Gouache Illustration Parchment Integration (`style.css`)
+### 2. Gouache Illustration Parchment Integration & Failsafe Loader (`style.css`, `script.js`)
 - Replaced photo card drop shadows with flat, clean, paper-integrated layouts.
 - Built bespoke radial background backdrops for the photo wrappers:
   - **Fajar (Groom)**: Sleek classic cream paper gradient.
   - **Riska (Bride)**: Warm, delicate rose-tinted cream paper gradient.
 - Added `mix-blend-mode: multiply` on `.mempelai-photo` along with a custom ultra-light warm sepia filter. This merges the watercolor strokes of `groom.webp` and `bride.webp` organically with the underlying custom gradients, looking like hand-painted parchment prints.
+- **Race Condition Image Loader Fix**: Refactored `script.js` to register `onload` and `onerror` callbacks *before* assigning `.src`. This guarantees that even if the illustrations load instantaneously from the browser's cache, the initials fallback elements are immediately set to `display: none`, letting the multiply blend effect shine without dark charcoal interference.
+- **Cache-Busting Asset Versioning**: Configured `?v=1.0.2` queries on stylesheet, config, main script, and illustration image sources to instantly bypass outdated browser and CDN caches for all visitors.
 
 ### 3. Programmatic Staggered Scroll-Reveal (`index.html`, `style.css`, `script.js`)
 - Relocated `.reveal-item` classes from the high-level `<section>` tags to individual inner elements.
