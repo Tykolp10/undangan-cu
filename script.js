@@ -705,7 +705,7 @@ function setupGateOpening() {
 
     // 2. Play background music (safely within user gesture context)
     if (CONFIG.music && CONFIG.music.enabled && CONFIG.music.src) {
-      bgMusic.src = CONFIG.music.src;
+      bgMusic.src = CONFIG.music.src + '?v=1.0.3';
       bgMusic.play()
         .then(() => {
           audioControl.classList.remove('hidden');

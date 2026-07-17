@@ -282,9 +282,10 @@ body.locked {
   font-size: 0.95rem;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--color-bronze);
+  color: var(--color-cream);
   font-weight: 500;
   opacity: 0.95;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .recipient-box {
@@ -582,6 +583,14 @@ body.locked {
   font-weight: 600;
   letter-spacing: 1px;
   color: var(--color-rose) !important; /* Soft playful rose accent to contrast dark arang */
+}
+
+.mempelai-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
 }
 
 .mempelai-photo-wrapper {
