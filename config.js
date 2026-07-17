@@ -63,7 +63,7 @@ const CONFIG = {
   // Diputar saat tamu klik "Buka Undangan" (memenuhi aturan autoplay browser).
   // Pilih lagu bertema khidmat/akustik agar selaras dengan mood.
   music: {
-    enabled: false,
+    enabled: true,
     src: "assets/audio/song.m4a",       // taruh file lagu pilihanmu di sini
   },
 
