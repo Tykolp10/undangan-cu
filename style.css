@@ -1179,7 +1179,7 @@ body.locked {
   background-color: rgba(243, 236, 224, 0.2);
   border: 1px solid var(--color-bronze);
   padding: 30px 20px;
-  text-align: left;
+  text-align: center;
   margin-bottom: 45px;
   position: relative;
   border-radius: 1px;
@@ -1225,6 +1225,8 @@ body.locked {
   transition: all 0.3s ease;
   border-radius: 1px;
   outline: none;
+  text-align: center;
+  text-align-last: center;
 }
 
 .form-control:focus {
