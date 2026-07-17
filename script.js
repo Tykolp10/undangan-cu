@@ -48,22 +48,7 @@ function initCover() {
   if (basmallahEl) basmallahEl.textContent = CONFIG.cover.basmallah || '';
   if (openingLineEl) openingLineEl.textContent = CONFIG.cover.openingLine || '';
   if (greetingEl) greetingEl.textContent = CONFIG.cover.greeting || 'The Wedding of';
-  
-  // Render monogram if defined
-  if (CONFIG.cover.monogram) {
-    let monogramEl = document.getElementById('gate-monogram');
-    if (!monogramEl) {
-      monogramEl = document.createElement('div');
-      monogramEl.id = 'gate-monogram';
-      monogramEl.className = 'gate-monogram';
-      if (titleEl) {
-        titleEl.parentNode.insertBefore(monogramEl, titleEl);
-      }
-    }
-    monogramEl.textContent = CONFIG.cover.monogram;
-  }
-
-  if (titleEl) titleEl.textContent = CONFIG.couple.shortName || 'Fajar & Rizka';
+  if (titleEl) titleEl.textContent = CONFIG.cover.monogram || CONFIG.couple.shortName || 'Fajar & Rizka';
   if (dateEl) dateEl.textContent = CONFIG.couple.dateDisplay || '';
   if (btnOpenEl) btnOpenEl.textContent = CONFIG.cover.buttonText || 'Buka Undangan';
 
