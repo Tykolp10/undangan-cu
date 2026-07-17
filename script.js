@@ -1,5 +1,5 @@
 /**
- * SCRIPT UTAMA — Undangan Fajar & Riska
+ * SCRIPT UTAMA — Undangan Fajar & Rizka
  * Mengontrol logika inisialisasi, personalisasi tamu,
  * pemutaran lagu latar, pembukaan Cover/Gate,
  * serta pengisian dinamis seluruh section undangan (Mempelai, Acara, Hadiah, RSVP, Penutup).
@@ -48,7 +48,22 @@ function initCover() {
   if (basmallahEl) basmallahEl.textContent = CONFIG.cover.basmallah || '';
   if (openingLineEl) openingLineEl.textContent = CONFIG.cover.openingLine || '';
   if (greetingEl) greetingEl.textContent = CONFIG.cover.greeting || 'The Wedding of';
-  if (titleEl) titleEl.textContent = CONFIG.couple.shortName || 'Fajar & Riska';
+  
+  // Render monogram if defined
+  if (CONFIG.cover.monogram) {
+    let monogramEl = document.getElementById('gate-monogram');
+    if (!monogramEl) {
+      monogramEl = document.createElement('div');
+      monogramEl.id = 'gate-monogram';
+      monogramEl.className = 'gate-monogram';
+      if (titleEl) {
+        titleEl.parentNode.insertBefore(monogramEl, titleEl);
+      }
+    }
+    monogramEl.textContent = CONFIG.cover.monogram;
+  }
+
+  if (titleEl) titleEl.textContent = CONFIG.couple.shortName || 'Fajar & Rizka';
   if (dateEl) dateEl.textContent = CONFIG.couple.dateDisplay || '';
   if (btnOpenEl) btnOpenEl.textContent = CONFIG.cover.buttonText || 'Buka Undangan';
 
@@ -227,7 +242,7 @@ function initEventsAndCountdown() {
     try {
       const startDate = parseISODate(dateISO);
       if (!isNaN(startDate.getTime())) {
-        const endDate = new Date(startDate.getTime() + (2 * 60 * 60 * 1000));
+        const endDate = new Date(startDate.getTime() + (5 * 60 * 60 * 1000));
 
         const toUTCCompact = (d) => {
           return d.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
@@ -613,8 +628,10 @@ function initClosing() {
   const closingNote = document.getElementById('closing-note');
   const closingName = document.getElementById('closing-couple-name');
   const madeBy = document.getElementById('made-by');
+  const sigTitle = document.querySelector('.sig-title');
 
   if (closingNote) closingNote.textContent = CONFIG.footer.closingNote || '';
+  if (sigTitle) sigTitle.textContent = CONFIG.footer.signatureTitle || 'Kami yang berbahagia';
   if (closingName) closingName.textContent = CONFIG.couple.shortName || '';
   if (madeBy) madeBy.textContent = CONFIG.footer.madeBy || 'Made with ♡';
 }

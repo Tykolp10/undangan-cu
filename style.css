@@ -256,6 +256,16 @@ body.locked {
   margin-top: 15px;
 }
 
+.gate-monogram {
+  font-family: var(--font-title);
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: var(--color-bronze);
+  letter-spacing: 4px;
+  margin: 12px 0 2px 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
 .couple-name {
   font-family: var(--font-title);
   font-size: 3.4rem;

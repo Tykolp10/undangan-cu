@@ -1,5 +1,5 @@
 /* =========================================================================
-   CONFIG UNDANGAN DIGITAL — Fajar & Riska
+   CONFIG UNDANGAN DIGITAL — Fajar & Rizka
    -------------------------------------------------------------------------
    File ini SATU-SATUNYA yang perlu diedit per event.
    Ubah nilainya saja (sisi kanan), jangan ubah nama variabel (sisi kiri).
@@ -43,8 +43,8 @@ const CONFIG = {
 
   /* --- META (tab browser & preview saat link di-share) ------------------ */
   meta: {
-    title: "Fajar & Riska Wedding",
-    description: "The Wedding of Fajar & Riska",
+    title: "The Wedding of Fajar & Rizka",
+    description: "Undangan Pernikahan Fajar & Rizka — 22 Agustus 2026",
     ogImage: "assets/img/cover.webp",   // gambar yang muncul saat link dishare di WA/IG
     favicon: "assets/img/favicon.png",
     themeColor: "#8A6D3B",
@@ -52,26 +52,27 @@ const CONFIG = {
 
   /* --- DATA INTI PASANGAN ----------------------------------------------- */
   couple: {
-    shortName: "Fajar & Riska",
+    shortName: "Fajar & Rizka",
     // GANTI dengan tanggal acara ASLI. Format ISO + offset WIB (+07:00).
     // Ini yang dipakai countdown & link kalender. WAJIB akurat & valid.
-    dateISO: "2026-12-20T08:00:00+07:00",
-    dateDisplay: "20 Desember 2026",    // versi yang ditampilkan ke tamu
+    dateISO: "2026-08-22T12:00:00+07:00",
+    dateDisplay: "22 Agustus 2026",    // versi yang ditampilkan ke tamu
   },
 
   /* --- MUSIK LATAR (opsional) ------------------------------------------- */
   // Diputar saat tamu klik "Buka Undangan" (memenuhi aturan autoplay browser).
   // Pilih lagu bertema khidmat/akustik agar selaras dengan mood.
   music: {
-    enabled: true,
+    enabled: false,
     src: "assets/audio/song.m4a",       // taruh file lagu pilihanmu di sini
   },
 
   /* --- 1. COVER / GATE -------------------------------------------------- */
   cover: {
     basmallah: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
-    openingLine: "ATAS BERKAT ROCHMAT ALLOH YANG MAHA KUASA",
-    greeting: "The Wedding of",
+    openingLine: "Atas Berkat Rochmat Alloh Yang Maha Kuasa",
+    greeting: "Kami mengundang anda dalam PERNIKAHAN KAMI",
+    monogram: "C & U",
     defaultGuest: "Tamu Undangan",      // dipakai kalau URL tidak ada ?to=
     bgImage: "assets/img/cover.webp",
     buttonText: "Buka Undangan",
@@ -79,55 +80,47 @@ const CONFIG = {
 
   /* --- 2. PEMBUKA + AYAT ------------------------------------------------ */
   quote: {
-    arabic: "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِقَوْمٍ يَتَفَكَّرُونَ",
-    text: "Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya. Dia menjadikan di antaramu rasa cinta dan kasih sayang.",
-    source: "QS. Ar-Rum: 21",
+    arabic: "يٰٓاَيُّهَا النَّاسُ اِنَّا خَلَقْنٰكُمْ mِّنْ ذَكَرٍ وَّاُنْثٰى وَجَعَلْنٰكُمْ شُعُوْبًا وَّقَبَآىِٕلَ لِتَعَارَفُوْا ۚ اِنَّ اَكْرَمَكُمْ عِنْدَ اللّٰهِ اَتْقٰىكُمْ ۗاِنَّ اللّٰهَ عَلِيْمٌ خَبِيْرٌ",
+    text: "Wahai manusia, sesungguhnya Kami telah menciptakan kamu dari seorang laki-laki dan perempuan. Kemudian, Kami menjadikan kamu berbangsa-bangsa dan bersuku-suku agar kamu saling mengenal. Sesungguhnya yang paling mulia di antara kamu di sisi Allah adalah orang yang paling bertakwa. Sesungguhnya Allah Maha Mengetahui lagi Mahateliti.",
+    source: "QS. Al-Hujurot ayat 13",
   },
 
   /* --- 3. MEMPELAI (ringkas) -------------------------------------------- */
   groom: {
     name: "Fajar",
     fullName: "Fajar Ikhsanuddin",
-    parents: "Putra dari Bapak Ikhsanuddin & Ibu Maryam",
+    parents: "Putra Alm. Bapak Sukamto & Ibu Musrifah",
     photo: "assets/img/groom.webp",
-    instagram: "fajar_ikhsan",
+    instagram: "lazy_08",
   },
   bride: {
-    name: "Riska",
-    fullName: "Riska Nur Laila",
-    parents: "Putri dari Bapak Joko Susilo & Ibu Aminah",
+    name: "Rizka",
+    fullName: "Rizka Noor Laila",
+    parents: "Putri Alm. Bapak H. Sunaryo & Ibu Sri Purwati",
     photo: "assets/img/bride.webp",
-    instagram: "riska_nurlaila",
+    instagram: "cikasuna",
   },
 
   /* --- 4. ACARA + COUNTDOWN --------------------------------------------- */
   // Countdown otomatis mengarah ke couple.dateISO di atas.
   events: [
     {
-      name: "Akad Nikah",
-      dateDisplay: "Minggu, 20 Desember 2026",
-      time: "08.00 WIB - Selesai",
-      venue: "Masjid Agung Al-Akbar Surabaya",
-      address: "Jl. Masjid Al-Akbar Utara No.1, Pagesangan, Jambangan, Surabaya",
-      mapsUrl: "https://maps.app.goo.gl/9R2D8c",
-    },
-    {
       name: "Resepsi",
-      dateDisplay: "Minggu, 20 Desember 2026",
-      time: "11.00 WIB - Selesai",
-      venue: "Ballroom Hotel Santika Premier Surabaya",
-      address: "Jl. Raya Gubeng No.54, Gubeng, Kec. Gubeng, Surabaya",
-      mapsUrl: "https://maps.app.goo.gl/5fS8Jk",
+      dateDisplay: "Sabtu Legi, 8 Robi'ul Awwal 1448 H / 22 Agustus 2026 M.",
+      time: "12.00 – 17.00 WIB",
+      venue: "Gedung Orshid",
+      address: "Pesantren Majmaal Bachroin Chubbul Wathon Minal Iman – Shiddiqiyyah, Losari, Ploso, Jombang",
+      mapsUrl: "https://www.google.com/maps/search/?api=1&query=-7.4513297,112.2210737&query_place_id=ChIJM0m5vPo9eC4RcqOMmy4EXBg",
     },
   ],
 
   /* --- 5. HADIAH -------------------------------------------------------- */
   gifts: {
-    enabled: true,
+    enabled: false,
     note: "Bagi tamu yang ingin mengirimkan tanda kasih, dapat melalui:",
     accounts: [
       { bank: "BCA", logo: "assets/img/bank/bca.png", number: "14002938102", holder: "Fajar Ikhsanuddin" },
-      { bank: "Mandiri", logo: "assets/img/bank/mandiri.png", number: "1420019284721", holder: "Riska Nur Laila" }
+      { bank: "Mandiri", logo: "assets/img/bank/mandiri.png", number: "1420019284721", holder: "Rizka Noor Laila" }
     ],
     shippingAddress: "Perumahan Indah Asri Blok C-12, Jambangan, Surabaya",
     confirmWa: "6281234567890",
@@ -142,7 +135,8 @@ const CONFIG = {
 
   /* --- 7. PENUTUP ------------------------------------------------------- */
   footer: {
-    closingNote: "Merupakan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir di hari bahagia kami.",
+    closingNote: "Terimakasih",
+    signatureTitle: "Atas nama keluarga",
     madeBy: "Dibuat dengan \u2661",
   },
 
