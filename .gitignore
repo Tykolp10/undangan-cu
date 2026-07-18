@@ -8,3 +8,7 @@ files.zip
 # Ignore local system/IDE directories
 .gemini/
 .git/
+.DS_Store
+
+# Aset mentah 2K (tidak ikut deploy)
+assets/img/raw/
