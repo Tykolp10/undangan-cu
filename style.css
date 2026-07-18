@@ -740,14 +740,14 @@ body.locked {
 
 .mempelai-parents {
   font-family: var(--font-body);
-  /* Baris paling penting bagi tamu generasi orang tua — ukuran & kontras
-     dinaikkan agar terbaca tanpa mendekatkan HP ke mata */
-  font-size: 1.08rem;
+  /* Baris paling penting bagi tamu generasi orang tua — besar & kontras,
+     tapi WAJIB satu baris (permintaan Dex): skala ikut lebar layar */
+  font-size: clamp(0.82rem, 4.1vw, 1.05rem);
   font-weight: 500;
   color: rgba(26, 26, 26, 0.85);
   line-height: 1.55;
   margin-bottom: 12px;
-  max-width: 300px;
+  white-space: nowrap;
 }
 
 .mempelai-ampersand {
