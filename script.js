@@ -616,6 +616,15 @@ function initClosing() {
   const madeBy = document.getElementById('made-by');
   const sigTitle = document.querySelector('.sig-title');
 
+  // Foto bookend — URL sama persis dengan bg gate agar kena cache browser
+  const photoWrap = document.querySelector('.closing-photo-wrap');
+  const photoEl = document.getElementById('closing-photo');
+  if (photoEl && CONFIG.footer.photo) {
+    photoEl.src = CONFIG.footer.photo;
+  } else if (photoWrap) {
+    photoWrap.style.display = 'none';
+  }
+
   if (closingNote) closingNote.textContent = CONFIG.footer.closingNote || '';
   if (sigTitle) sigTitle.textContent = CONFIG.footer.signatureTitle || 'Kami yang berbahagia';
   if (closingName) closingName.textContent = CONFIG.couple.shortName || '';

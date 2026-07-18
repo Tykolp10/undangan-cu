@@ -136,6 +136,7 @@ const CONFIG = {
 
   /* --- 7. PENUTUP ------------------------------------------------------- */
   footer: {
+    photo: "assets/img/cover.webp",     // foto penutup (bookend dengan cover)
     closingNote: "Terimakasih",
     signatureTitle: "Atas nama keluarga",
     madeBy: "Dibuat dengan \u2661",

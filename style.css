@@ -1506,18 +1506,28 @@ body.locked {
   margin: 12px 0;
 }
 
-.brush-illust-slot {
-  margin: 15px auto;
-  max-width: 140px;
-  display: flex;
-  justify-content: center;
+/* Foto penutup — bookend dengan cover, sepia lembut + frame bronze offset */
+.closing-photo-wrap {
+  position: relative;
+  margin: 15px auto 35px auto;
 }
 
-.brush-illust {
+.closing-photo-wrap::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 6px;
+  right: 6px;
+  border: 1px solid var(--color-bronze);
+  pointer-events: none;
+}
+
+.closing-photo {
+  display: block;
   width: 100%;
-  height: auto;
-  object-fit: contain;
-  opacity: 0.85;
+  border-radius: 4px;
+  filter: sepia(0.08) contrast(1.02) brightness(0.98); /* sama dengan .mempelai-photo */
 }
 
 /* --- Tap Target Size Expansions (A11y >= 44px) --- */
