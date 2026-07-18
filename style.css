@@ -338,6 +338,7 @@ body.locked {
   font-weight: 400;
   color: var(--color-cream);
   line-height: 1.2;
+  overflow-wrap: anywhere; /* kata tunggal super panjang (?to= iseng) patah rapi */
 }
 
 /* --- Premium Buttons --- */
@@ -1622,6 +1623,30 @@ body.locked {
 /* Base Form Control Touch Adjustments */
 .form-control {
   min-height: 44px;
+}
+
+/* HP diputar landscape / layar sangat pendek: cover boleh di-scroll,
+   konten mengalir natural — teks tidak lagi menimpa wajah */
+@media (max-height: 480px) {
+  .gate {
+    overflow-y: auto;
+    align-items: flex-start; /* cegah kliping atas saat konten > viewport */
+  }
+  .gate-content {
+    height: auto;
+    min-height: 100%;
+    padding: 14px 0;
+  }
+  .engraved-frame {
+    height: auto;
+    gap: 10px;
+  }
+  .recipient-box {
+    margin: 10px 0; /* auto-margin tidak relevan saat mengalir */
+  }
+  .couple-name {
+    font-size: 1.9rem;
+  }
 }
 
 /* Responsive adjustments for mobile devices */

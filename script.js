@@ -91,7 +91,8 @@ function initCover() {
   const guestNameEl = document.getElementById('guest-name');
   if (guestNameEl) {
     if (guestName) {
-      guestName = guestName.trim();
+      // batasi panjang: ?to= super panjang dari orang iseng merusak layout box
+      guestName = guestName.trim().slice(0, 60);
       guestNameEl.textContent = guestName;
     } else {
       guestNameEl.textContent = CONFIG.cover.defaultGuest || 'Tamu Undangan';
@@ -499,7 +500,7 @@ function initRSVP() {
   }
 
   btnSubmit.addEventListener('click', () => {
-    const namaVal = rsvpNama ? rsvpNama.value.trim() : '';
+    const namaVal = rsvpNama ? rsvpNama.value.trim().slice(0, 60) : '';
     
     if (namaVal === '') {
       if (rsvpNama) rsvpNama.classList.add('error');

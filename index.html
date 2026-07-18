@@ -17,6 +17,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://tykolp10.github.io/undangan-cu/assets/img/og-image.webp">
   <meta name="theme-color" content="#8A6D3B">
+  <meta name="robots" content="noindex">
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
@@ -28,7 +29,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cinzel+Decorative&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=1.1.0">
+  <link rel="stylesheet" href="style.css?v=1.1.1">
 
   <!-- Anime.js CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
@@ -78,7 +79,8 @@
   </button>
 
   <!-- BACKGROUND MUSIC ELEMENT -->
-  <audio id="bg-music" loop preload="auto"></audio>
+  <!-- preload metadata saja: hemat kuota tamu, file penuh diunduh saat play -->
+  <audio id="bg-music" loop preload="metadata"></audio>
 
   <!-- MAIN SCROLLABLE CONTENT (Initially Locked until Gate opens) -->
   <main id="main-content" class="main-content hidden">
@@ -302,7 +304,7 @@
           <!-- Nama Input -->
           <div class="form-group">
             <label for="rsvp-nama" class="form-label">Nama Tamu</label>
-            <input type="text" id="rsvp-nama" class="form-control" placeholder="Masukkan Nama Anda">
+            <input type="text" id="rsvp-nama" class="form-control" placeholder="Masukkan Nama Anda" maxlength="60">
             <span id="rsvp-name-error" class="form-error hidden">Nama wajib diisi!</span>
           </div>
           
@@ -407,6 +409,6 @@
   <!-- CONFIGURATION -->
   <script src="config.js?v=1.0.3"></script>
   <!-- MAIN SCRIPT -->
-  <script src="script.js?v=1.0.4" defer></script>
+  <script src="script.js?v=1.0.5" defer></script>
 </body>
 </html>
