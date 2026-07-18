@@ -31,7 +31,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 6. Setup Alur Buka Undangan (Gate Opening)
   setupGateOpening();
+
+  // 7. Autoplay BGM saat mendarat di cover (fallback: interaksi pertama)
+  initAutoplayBGM();
 });
+
+/**
+ * Mencoba memutar BGM langsung saat halaman dibuka. Browser mobile memblokir
+ * autoplay tanpa gesture, jadi fallback: mulai pada interaksi pertama user
+ * di mana pun (tap/scroll/keyboard) — jauh sebelum tombol Buka Undangan.
+ */
+function initAutoplayBGM() {
+  if (!(CONFIG.music && CONFIG.music.enabled && CONFIG.music.src)) return;
+  const bgMusic = document.getElementById('bg-music');
+  if (!bgMusic) return;
+
+  // set src sedini mungkin agar file ter-preload selagi user membaca cover
+  bgMusic.src = CONFIG.music.src + '?v=1.0.3';
+
+  bgMusic.play().catch(() => {
+    const unlock = () => {
+      bgMusic.play().catch(() => {}); // kalau masih diblokir, klik tombol tetap jadi fallback
+      document.removeEventListener('pointerdown', unlock);
+      document.removeEventListener('touchstart', unlock);
+      document.removeEventListener('keydown', unlock);
+    };
+    document.addEventListener('pointerdown', unlock);
+    document.addEventListener('touchstart', unlock);
+    document.addEventListener('keydown', unlock);
+  });
+}
 
 /**
  * Membaca konfigurasi dari CONFIG dan query string untuk menginisialisasi cover.
@@ -699,8 +728,11 @@ function setupGateOpening() {
     this.disabled = true;
 
     // 2. Play background music (safely within user gesture context)
-    if (CONFIG.music && CONFIG.music.enabled && CONFIG.music.src) {
-      bgMusic.src = CONFIG.music.src + '?v=1.0.3';
+    // Bisa jadi sudah berputar dari initAutoplayBGM — jangan restart
+    if (CONFIG.music && CONFIG.music.enabled && CONFIG.music.src && !bgMusic.paused) {
+      audioControl.classList.remove('hidden');
+    } else if (CONFIG.music && CONFIG.music.enabled && CONFIG.music.src) {
+      if (!bgMusic.src) bgMusic.src = CONFIG.music.src + '?v=1.0.3';
       bgMusic.play()
         .then(() => {
           audioControl.classList.remove('hidden');
