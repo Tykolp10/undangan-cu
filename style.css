@@ -921,6 +921,15 @@ body.locked {
   font-size: 0.9rem;
 }
 
+/* Ilustrasi etching venue — latar putih menyatu ke kertas via multiply */
+.venue-etching {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 12px auto 4px auto;
+  mix-blend-mode: multiply;
+}
+
 .event-detail-item.venue {
   font-family: var(--font-title);
   font-size: 1.22rem;

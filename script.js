@@ -277,6 +277,7 @@ function initEventsAndCountdown() {
         <div class="event-details">
           <div class="event-detail-item date">${evt.dateDisplay}</div>
           <div class="event-detail-item time">${evt.time}</div>
+          ${evt.illustration ? `<img class="venue-etching" src="${evt.illustration}" alt="Ilustrasi ${evt.venue}" loading="lazy" onerror="this.style.display='none'">` : ''}
           <div class="event-detail-item venue">${evt.venue}</div>
           <div class="event-detail-item address">${evt.address}</div>
         </div>

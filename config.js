@@ -109,6 +109,7 @@ const CONFIG = {
       dateDisplay: "Sabtu Legi, 8 Robi'ul Awwal 1448 H / 22 Agustus 2026 M.",
       time: "12.00 – 17.00 WIB",
       venue: "Gedung Orshid",
+      illustration: "assets/img/illust/venue-etching.webp",
       address: "Pesantren Majmaal Bachroin Chubbul Wathon Minal Iman – Shiddiqiyyah, Losari, Ploso, Jombang",
       mapsUrl: "https://www.google.com/maps/search/?api=1&query=-7.4513297,112.2210737&query_place_id=ChIJM0m5vPo9eC4RcqOMmy4EXBg",
     },
