@@ -653,6 +653,7 @@ body.locked {
   overflow: hidden;
   z-index: 2;
   border-radius: 66px 66px 2px 2px; /* Arched inner container */
+  isolation: isolate; /* Safari: jaga kliping border-radius saat child di-transform */
 }
 
 #groom-card .photo-container {
@@ -677,8 +678,12 @@ body.locked {
   transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.mempelai-photo-wrapper:hover .mempelai-photo {
-  transform: scale(1.05);
+/* Zoom halus hanya di perangkat ber-hover sungguhan (desktop) —
+   di layar sentuh, tap membuat hover "nyangkut" + bug kliping Safari */
+@media (hover: hover) and (pointer: fine) {
+  .mempelai-photo-wrapper:hover .mempelai-photo {
+    transform: scale(1.05);
+  }
 }
 
 .mempelai-initials {
