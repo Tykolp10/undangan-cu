@@ -45,7 +45,7 @@ const CONFIG = {
   meta: {
     title: "The Wedding of Fajar & Rizka",
     description: "Undangan Pernikahan Fajar & Rizka — 22 Agustus 2026",
-    ogImage: "assets/img/cover.webp",   // gambar yang muncul saat link dishare di WA/IG
+    ogImage: "assets/img/og-image.webp", // gambar yang muncul saat link dishare di WA/IG
     favicon: "assets/img/favicon.png",
     themeColor: "#8A6D3B",
   },
