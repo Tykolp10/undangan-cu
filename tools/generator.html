@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generator Link Undangan C&U</title>
+<style>
+  body { font-family: Georgia, serif; max-width: 720px; margin: 24px auto; padding: 0 16px; color: #1A1A1A; background: #F3ECE0; }
+  h1 { font-size: 1.3rem; }
+  textarea { width: 100%; min-height: 140px; font: 1rem/1.5 monospace; padding: 10px; box-sizing: border-box; border: 1px solid #8A6D3B; background: #fff; }
+  button { font: 0.85rem Georgia, serif; padding: 6px 14px; border: 1px solid #8A6D3B; background: #8A6D3B; color: #F3ECE0; cursor: pointer; }
+  button:active { opacity: 0.7; }
+  #hasil { margin-top: 20px; }
+  .baris { display: flex; align-items: center; gap: 8px; padding: 8px 0; border-bottom: 1px solid rgba(138,109,59,.3); }
+  .baris .nama { flex: 1; min-width: 0; }
+  .baris .link { display: block; font-size: 0.78rem; color: #555; word-break: break-all; }
+</style>
+</head>
+<body>
+<h1>Generator Link Undangan — Fajar &amp; Rizka</h1>
+<p>Tempel daftar nama tamu, satu nama per baris:</p>
+<textarea id="nama" placeholder="Bapak Ahmad Yani&#10;Ibu Siti Aminah&#10;Keluarga Besar Pak RT"></textarea>
+<p><button id="buat">Buat Daftar Link</button></p>
+<div id="hasil"></div>
+
+<script>
+const BASE = 'https://tykolp10.github.io/undangan-cu/';
+
+function buatLink(nama) {
+  return BASE + '?to=' + encodeURIComponent(nama).replace(/%20/g, '+');
+}
+
+function pesanWA(nama, link) {
+  return "Assalamu'alaikum Wr. Wb.\n\n" +
+    'Kepada Yth. ' + nama + '\n\n' +
+    'Dengan memohon rahmat dan ridho Allah SWT, kami mengundang ' +
+    'Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan kami:\n\n' +
+    'Fajar & Rizka\nSabtu, 22 Agustus 2026\n\n' +
+    'Undangan lengkap dapat dibuka di:\n' + link + '\n\n' +
+    'Merupakan kehormatan bagi kami apabila Bapak/Ibu/Saudara/i ' +
+    'berkenan hadir.\n\n' +
+    "Wassalamu'alaikum Wr. Wb.";
+}
+
+function salin(teks, btn) {
+  navigator.clipboard.writeText(teks).then(() => {
+    const asli = btn.textContent;
+    btn.textContent = 'Tersalin!';
+    setTimeout(() => { btn.textContent = asli; }, 1500);
+  }).catch(() => prompt('Salin manual:', teks));
+}
+
+document.getElementById('buat').addEventListener('click', () => {
+  const hasil = document.getElementById('hasil');
+  hasil.innerHTML = '';
+  const daftar = document.getElementById('nama').value
+    .split('\n').map(s => s.trim()).filter(Boolean);
+  daftar.forEach(nama => {
+    const link = buatLink(nama);
+    const div = document.createElement('div');
+    div.className = 'baris';
+    const info = document.createElement('div');
+    info.className = 'nama';
+    const b = document.createElement('b');
+    b.textContent = nama;
+    const a = document.createElement('a');
+    a.className = 'link';
+    a.href = link;
+    a.target = '_blank';
+    a.textContent = link;
+    info.append(b, a);
+    const btnLink = document.createElement('button');
+    btnLink.textContent = 'Salin Link';
+    btnLink.onclick = () => salin(link, btnLink);
+    const btnWA = document.createElement('button');
+    btnWA.textContent = 'Salin Pesan WA';
+    btnWA.onclick = () => salin(pesanWA(nama, link), btnWA);
+    div.append(info, btnLink, btnWA);
+    hasil.appendChild(div);
+  });
+});
+
+// self-check
+console.assert(buatLink('Budi Santoso') === BASE + '?to=Budi+Santoso', 'buatLink spasi->+');
+console.assert(buatLink('R&D Team') === BASE + '?to=R%26D%20Team'.replace('%20','+'), 'buatLink escape');
+</script>
+</body>
+</html>
