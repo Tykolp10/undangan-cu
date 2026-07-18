@@ -266,14 +266,15 @@ body.locked {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
+/* Monogram gate — Cinzel Decorative KHUSUS tanda monogram (backlog H) */
 .couple-name {
-  font-family: var(--font-title);
-  font-size: 3.4rem;
+  font-family: 'Cinzel Decorative', var(--font-title);
+  font-size: 2.9rem;
   font-weight: 400;
-  line-height: 1.1;
+  line-height: 1.15;
   color: var(--color-cream);
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-  letter-spacing: 0.5px;
+  letter-spacing: 5px;
   margin: 10px 0;
 }
 
@@ -734,10 +735,10 @@ body.locked {
 }
 
 .mempelai-ampersand {
-  font-family: var(--font-title);
-  font-size: 2.6rem;
+  font-family: var(--font-title); /* Cormorant Garamond Italic (backlog H) */
+  font-size: 4rem;                /* ±1.5x dari 2.6rem */
   font-style: italic;
-  color: var(--color-rose); /* Subtle rose tint on ampersand doodle link */
+  color: var(--color-bronze);
   margin: 6px 0;
   font-weight: 300;
   opacity: 0.9;
@@ -1433,13 +1434,15 @@ body.locked {
   margin-bottom: 12px;
 }
 
+/* Tanda tangan penutup — Cinzel me-render huruf kecil sebagai small caps
+   (DISENGAJA, keputusan Dex). Tanpa italic: Cinzel tidak punya italic asli. */
 .sig-couple-name {
-  font-family: var(--font-title);
-  font-size: 2.7rem;
+  font-family: 'Cinzel Decorative', var(--font-title);
+  font-size: 1.9rem;
   font-weight: 400;
-  font-style: italic;
   color: var(--color-bronze);
-  letter-spacing: 0.5px;
+  letter-spacing: 2px;
+  line-height: 1.35;
 }
 
 .made-by {
@@ -1634,7 +1637,8 @@ body.locked {
     margin: 8px 0 0 0;
   }
   .couple-name {
-    font-size: 2.5rem;
+    font-size: 2.15rem;
+    letter-spacing: 4px;
     margin: 6px 0;
   }
   .date-display {
