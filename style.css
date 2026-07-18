@@ -144,10 +144,14 @@ body.locked {
   left: 0;
   width: 100%;
   height: 100%;
+  /* Scrim atas untuk kontras blok teks (teks kini di sepertiga atas);
+     melandai terang di zona wajah, bawah tetap gelap untuk kotak tamu */
   background: linear-gradient(
     to bottom,
-    rgba(26, 26, 26, 0.3) 0%,
-    rgba(26, 26, 26, 0.6) 60%,
+    rgba(26, 26, 26, 0.62) 0%,
+    rgba(26, 26, 26, 0.45) 22%,
+    rgba(26, 26, 26, 0.28) 42%,
+    rgba(26, 26, 26, 0.6) 75%,
     rgba(26, 26, 26, 0.8) 100%
   );
   z-index: 1;
