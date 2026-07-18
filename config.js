@@ -43,8 +43,8 @@ const CONFIG = {
 
   /* --- META (tab browser & preview saat link di-share) ------------------ */
   meta: {
-    title: "The Wedding of Fajar & Rizka",
-    description: "Undangan Pernikahan Fajar & Rizka — 22 Agustus 2026",
+    title: "The Wedding of Cika & Uddin",
+    description: "Undangan Pernikahan Cika & Uddin — 22 Agustus 2026",
     ogImage: "assets/img/og-image.webp", // gambar yang muncul saat link dishare di WA/IG
     favicon: "assets/img/favicon.png",
     themeColor: "#8A6D3B",
@@ -52,7 +52,7 @@ const CONFIG = {
 
   /* --- DATA INTI PASANGAN ----------------------------------------------- */
   couple: {
-    shortName: "Fajar & Rizka",
+    shortName: "Cika & Uddin",   // nama panggilan — dipakai tanda tangan penutup, judul kalender, teks WA
     // GANTI dengan tanggal acara ASLI. Format ISO + offset WIB (+07:00).
     // Ini yang dipakai countdown & link kalender. WAJIB akurat & valid.
     dateISO: "2026-08-22T12:00:00+07:00",
