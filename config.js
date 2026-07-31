@@ -96,7 +96,7 @@ const CONFIG = {
   bride: {
     name: "Rizka",
     fullName: "Rizka Noor Laila",
-    parents: "Putri Alm. Bapak H. Sunaryo & Ibu Sri Purwati",
+    parents: "Putri Alm. Bapak H. Sunaryo & Ibu Hj. Sri Purwati",
     photo: "assets/img/bride.webp",
     instagram: "cikasuna",
   },
