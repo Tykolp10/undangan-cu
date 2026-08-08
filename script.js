@@ -77,7 +77,13 @@ function initCover() {
   if (basmallahEl) basmallahEl.textContent = CONFIG.cover.basmallah || '';
   if (openingLineEl) openingLineEl.textContent = CONFIG.cover.openingLine || '';
   if (greetingEl) greetingEl.textContent = CONFIG.cover.greeting || 'The Wedding of';
-  if (titleEl) titleEl.textContent = CONFIG.cover.monogram || CONFIG.couple.shortName || 'Fajar & Rizka';
+  if (titleEl) {
+    if (CONFIG.cover.monogramImg) {
+      titleEl.innerHTML = `<img src="${CONFIG.cover.monogramImg}" alt="${CONFIG.couple.shortName || 'Cika & Uddin'}" class="gate-monogram-img">`;
+    } else {
+      titleEl.textContent = CONFIG.cover.monogram || CONFIG.couple.shortName || 'Fajar & Rizka';
+    }
+  }
   if (dateEl) dateEl.textContent = CONFIG.couple.dateDisplay || '';
   if (btnOpenEl) btnOpenEl.textContent = CONFIG.cover.buttonText || 'Buka Undangan';
 
