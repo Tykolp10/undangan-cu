@@ -71,9 +71,9 @@ const CONFIG = {
   cover: {
     basmallah: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
     openingLine: "Atas Berkat Rochmat Alloh Yang Maha Kuasa",
-    greeting: "Kami mengundang anda dalam PERNIKAHAN KAMI",
+    greeting: "",
     monogram: "Cika & Uddin",
-    monogramImg: "assets/img/cika-udin.png",
+    monogramImg: "assets/img/cika-udin-white.png",
     defaultGuest: "Tamu Undangan",      // dipakai kalau URL tidak ada ?to=
     bgImage: "assets/img/cover.webp",
     buttonText: "Buka Undangan",

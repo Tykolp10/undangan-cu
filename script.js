@@ -76,7 +76,14 @@ function initCover() {
 
   if (basmallahEl) basmallahEl.textContent = CONFIG.cover.basmallah || '';
   if (openingLineEl) openingLineEl.textContent = CONFIG.cover.openingLine || '';
-  if (greetingEl) greetingEl.textContent = CONFIG.cover.greeting || 'The Wedding of';
+  if (greetingEl) {
+    if (CONFIG.cover.greeting && CONFIG.cover.greeting.trim() !== '') {
+      greetingEl.textContent = CONFIG.cover.greeting;
+      greetingEl.classList.remove('hidden');
+    } else {
+      greetingEl.classList.add('hidden');
+    }
+  }
   if (titleEl) {
     if (CONFIG.cover.monogramImg) {
       titleEl.innerHTML = `<img src="${CONFIG.cover.monogramImg}" alt="${CONFIG.couple.shortName || 'Cika & Uddin'}" class="gate-monogram-img">`;

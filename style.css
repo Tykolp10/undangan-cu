@@ -272,58 +272,25 @@ body.locked {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* Monogram gate — Cinzel Decorative / Logo Gambar Cika & Uddin */
+/* Monogram gate — Logo Gambar Cika & Uddin (Warna Putih) */
 .couple-name-box {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 6px 0;
+  margin: 12px 0 6px 0;
   width: 100%;
 }
 
 .gate-monogram-img {
   width: 100%;
-  max-width: 250px;
+  max-width: 290px;
   height: auto;
   display: block;
   margin: 0 auto;
-  filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.55)) drop-shadow(0px 1px 2px rgba(255, 255, 255, 0.15));
+  /* Filter brightness/invert memastikan warna gambar 100% putih dengan bayangan kontras */
+  filter: brightness(0) invert(1) drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.75));
   object-fit: contain;
   transition: transform 0.4s ease;
-}
-
-/* Floral Ornaments di Cover/Gate */
-.gate-flower-ornament {
-  position: absolute;
-  width: 58px;
-  height: auto;
-  pointer-events: none;
-  z-index: 3;
-  opacity: 0.85;
-  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.4));
-}
-
-.gate-flower-tl {
-  top: 10px;
-  left: 10px;
-}
-
-.gate-flower-tr {
-  top: 10px;
-  right: 10px;
-  transform: scaleX(-1);
-}
-
-.gate-flower-bl {
-  bottom: 10px;
-  left: 10px;
-  transform: scaleY(-1);
-}
-
-.gate-flower-br {
-  bottom: 10px;
-  right: 10px;
-  transform: scale(-1);
 }
 
 .couple-name {
@@ -565,40 +532,18 @@ body.locked {
   text-align: center;
 }
 
-/* --- 2. SECTION DIVIDER (Engraving Rhythm + Flower Badge) --- */
+/* --- 2. SECTION DIVIDER (Engraving Rhythm) --- */
 .section-divider {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 70%;
   height: 1px;
   background: linear-gradient(
     to right,
     rgba(138, 109, 59, 0.1) 0%,
-    rgba(138, 109, 59, 0.45) 50%,
+    rgba(138, 109, 59, 0.4) 50%,
     rgba(138, 109, 59, 0.1) 100%
   );
-  margin: 45px auto;
-  opacity: 0.85;
-}
-
-.divider-flower-img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 36px;
-  height: auto;
-  background-color: var(--color-cream);
-  padding: 2px 6px;
-  border-radius: 50%;
-  opacity: 0.9;
-  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.08));
-}
-
-#div-opening-couple .divider-flower-img {
-  background-color: var(--color-ink);
+  margin: 40px auto;
+  opacity: 0.65;
 }
 
 /* --- SECTION 2: PEMBUKA & AYAT (Solemn Dark Contrast Section) --- */
